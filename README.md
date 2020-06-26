@@ -1,2 +1,2 @@
 # curseriaAutomacao
-Curso de Automacao Java
+Curso de Automacao Java + Cucumber + Junit
