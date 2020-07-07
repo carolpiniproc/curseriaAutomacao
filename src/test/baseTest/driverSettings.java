@@ -13,10 +13,11 @@ public class driverSettings {
     {
         System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
         driver = new ChromeDriver();
-        driver.get("https://www.m2.prebanco.com.br/mobilev2/android/Login.do");
-        Dimension d = new Dimension(400,800);
-        driver.manage().window().setSize(d);
-        //driver.manage().window().maximize();
+        //driver.get("https://www.m2.prebanco.com.br/mobilev2/android/Login.do");
+        //Dimension d = new Dimension(400,800);
+        //driver.manage().window().setSize(d);
+        driver.get("http://www.lojaexemplodelivros.com.br/");
+        driver.manage().window().maximize();
     }
 
     @After
