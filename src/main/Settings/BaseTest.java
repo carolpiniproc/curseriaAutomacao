@@ -3,7 +3,7 @@ import org.junit.Before;
 
 public class BaseTest {
 
- //   @Before
+    @Before
     public void abreBrowserLivros()
     {
         Driver.abreBrowser("http://www.lojaexemplodelivros.com.br");
@@ -14,7 +14,7 @@ public class BaseTest {
         Driver.quitProcess();
     }
 
-    @Before
+  //  @Before
     public void abreBrowserBradesco()
     {
         Driver.abreBrowser("https://www.m2.prebanco.com.br/mobilev2/android/Login.do");
