@@ -1,38 +1,38 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class InitialPage {
-    InicialMap map = new InicialMap();
+    InicialMap inicialMap = new InicialMap();
 
-   // String stTituloLivro = "//h2/a";
-    String stLivros = "ul.products-grid > li";
-    String stPrecoLista = "span.price";
-    String stTituloLivroLista = "h2 > a";
+//    String stTituloLivro = "//h2/a";
+//    String stLivros = "ul.products-grid > li";
+//    String stPrecoLista = "span.price";
+//    String stTituloLivroLista = "h2 > a";
 
     public void setPesquisa(CharSequence... valor) {
-        map.pesquisa.sendKeys(valor);
+        inicialMap.pesquisa.sendKeys(valor);
     }
 
     public String getTituloLivro() {
       //  WebElement elTitLivro = Driver.getDriver().findElement(By.xpath(stTituloLivro));
       //  String livro = elTitLivro.getText();
-        String livro = map.tituloLivro.getText();
+        String livro = inicialMap.tituloLivro.getText();
         return livro;
     }
 
     public String getPreco() {
-        return map.preco.getText();
+        return inicialMap.preco.getText();
     }
 
     public String getPrecoLista() {
-        List<WebElement> livros = Driver.getDriver().findElements(By.cssSelector(stLivros));
+       // List<WebElement> livros = Driver.getDriver().findElements(By.cssSelector(stLivros));
+        List<WebElement> livros = inicialMap.livros.getElements();
         for (WebElement livro : livros) {
-            WebElement tituloLivro = livro.findElement(By.cssSelector(stTituloLivroLista));
-            String titulo = tituloLivro.getText();
+            inicialMap.tituloLivroLista.setWebElement(livro);
+            String titulo = inicialMap.tituloLivroLista.getText();
             if (titulo.contains("Ajax com Java")) {
-                WebElement preco = livro.findElement(By.cssSelector(stPrecoLista));
-                return preco.getText();
+                inicialMap.precoLista.setWebElement(livro);
+                return inicialMap.precoLista.getText();
             }
         }
         return null;

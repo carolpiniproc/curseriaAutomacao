@@ -1,32 +1,49 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class Element {
     ByValue by; //comando do selenium
     String map; //caminhos dos elementos
+    String list;
+    WebElement webElement = null;
 
     public Element(ByValue by, String _map){
         this.by = by;
         map = _map;
     }
 
+    public void setWebElement(WebElement _element){
+        webElement = _element;
+    }
+
+    public WebElement getWebElement(By by) {
+        if (webElement == null){
+           return Driver.getDriver().findElement(by);
+        }else{
+           return webElement.findElement(by);
+        }
+    }
+
     public WebElement getElement(){
         WebElement element = null;
         switch (by){
             case ID:
-                element = Driver.getDriver().findElement(By.id(map));
+                element = getWebElement(By.id(map));
                 break;
             case XPATH:
-                element = Driver.getDriver().findElement(By.xpath(map));
+                element = getWebElement(By.xpath(map));
                 break;
             case CSS:
-                element = Driver.getDriver().findElement(By.cssSelector(map));
+                element = getWebElement(By.cssSelector(map));
                 break;
             case LINKTEXT:
-                element = Driver.getDriver().findElement(By.linkText(map));
+                element = getWebElement(By.linkText(map));
                 break;
             case NAME:
-                element = Driver.getDriver().findElement(By.name(map));
+                element = getWebElement(By.name(map));
                 break;
             default:
                 break;
@@ -34,6 +51,29 @@ public class Element {
         return element;
     }
 
+    public List<WebElement> getElements(){
+        List<WebElement> elements = null;
+        switch (by){
+            case ID:
+                elements = Driver.getDriver().findElements(By.id(map));
+                break;
+            case XPATH:
+                elements = Driver.getDriver().findElements(By.xpath(map));
+                break;
+            case CSS:
+                elements = Driver.getDriver().findElements(By.cssSelector(map));
+                break;
+            case LINKTEXT:
+                elements = Driver.getDriver().findElements(By.linkText(map));
+                break;
+            case NAME:
+                elements = Driver.getDriver().findElements(By.name(map));
+                break;
+            default:
+                break;
+        }
+        return elements;
+    }
     public void sendKeys(CharSequence... value){
         getElement().sendKeys(value);
     }
@@ -45,5 +85,27 @@ public class Element {
     public void click(){
         getElement().click();
     }
+
+    public String getAttribute(String value){
+       return getElement().getAttribute(value);
+    }
+    public void clear(){
+        getElement().clear();
+    }
+    public boolean isEnable(){
+        return getElement().isEnabled();
+    }
+    public boolean isDisable(){
+        return getElement().isDisplayed();
+    }
+    public boolean isSelected(){
+        return getElement().isSelected();
+    }
+
+    public void select(String value){
+        Select select = new Select(getElement());
+        select.selectByVisibleText(value);
+    }
+
 
 }
