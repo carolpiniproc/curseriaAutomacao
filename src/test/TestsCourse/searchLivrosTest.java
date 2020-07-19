@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.Keys;
+
+import static com.sun.org.apache.xerces.internal.util.PropertyState.is;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.containsString;
@@ -10,6 +12,7 @@ public class searchLivrosTest extends BaseTest{
 
     @Test
     public void testAsserThat()  {
+        Driver.setUrl("http://www.lojaexemplodelivros.com.br");
         initialPage.setPesquisa("fortaleza", Keys.ENTER);
         String livro = initialPage.getTituloLivro();
         Assert.assertEquals("[PRODUTO DE EXEMPLO] - Fortaleza Digital", livro);
@@ -21,6 +24,7 @@ public class searchLivrosTest extends BaseTest{
 
     @Test
     public void testList() {
+        Driver.setUrl("http://www.lojaexemplodelivros.com.br");
         initialPage.setPesquisa("html", Keys.ENTER);
         String preco = initialPage.getPrecoLista();
         assertThat("R$444,50", is(preco));

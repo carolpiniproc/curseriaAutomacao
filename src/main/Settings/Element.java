@@ -1,20 +1,28 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
+import java.util.HashMap;
 import java.util.List;
 
 public class Element {
-    ByValue by; //comando do selenium
-    String map; //caminhos dos elementos
-    String list;
-    WebElement webElement = null;
+    private ByValue by; //comando do selenium
+    private String map; //caminhos dos elementos
+    private WebElement webElement = null;
+    private HashMap<ByValue,By> byMap = new HashMap<ByValue, By>();
 
     public Element(ByValue by, String _map){
         this.by = by;
         map = _map;
+        setByMap();
     }
 
+    public void setByMap(){
+        byMap.put(ByValue.ID,By.id(map));
+        byMap.put(ByValue.CSS,By.cssSelector(map));
+        byMap.put(ByValue.LINKTEXT,By.linkText(map));
+        byMap.put(ByValue.NAME,By.name(map));
+        byMap.put(ByValue.XPATH,By.xpath(map));
+    }
     public void setWebElement(WebElement _element){
         webElement = _element;
     }
@@ -22,57 +30,16 @@ public class Element {
     public WebElement getWebElement(By by) {
         if (webElement == null){
            return Driver.getDriver().findElement(by);
-        }else{
-           return webElement.findElement(by);
         }
+        return webElement.findElement(by);
     }
 
     public WebElement getElement(){
-        WebElement element = null;
-        switch (by){
-            case ID:
-                element = getWebElement(By.id(map));
-                break;
-            case XPATH:
-                element = getWebElement(By.xpath(map));
-                break;
-            case CSS:
-                element = getWebElement(By.cssSelector(map));
-                break;
-            case LINKTEXT:
-                element = getWebElement(By.linkText(map));
-                break;
-            case NAME:
-                element = getWebElement(By.name(map));
-                break;
-            default:
-                break;
-        }
-        return element;
+        return getWebElement(byMap.get(by));
     }
 
     public List<WebElement> getElements(){
-        List<WebElement> elements = null;
-        switch (by){
-            case ID:
-                elements = Driver.getDriver().findElements(By.id(map));
-                break;
-            case XPATH:
-                elements = Driver.getDriver().findElements(By.xpath(map));
-                break;
-            case CSS:
-                elements = Driver.getDriver().findElements(By.cssSelector(map));
-                break;
-            case LINKTEXT:
-                elements = Driver.getDriver().findElements(By.linkText(map));
-                break;
-            case NAME:
-                elements = Driver.getDriver().findElements(By.name(map));
-                break;
-            default:
-                break;
-        }
-        return elements;
+        return Driver.getDriver().findElements(byMap.get(by));
     }
     public void sendKeys(CharSequence... value){
         getElement().sendKeys(value);

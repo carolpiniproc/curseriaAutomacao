@@ -7,11 +7,11 @@ public class Driver {
     private static WebDriver driver;
     private static Dimension dimension;
 
-    public static void abreBrowser(String url)
+    public static void abreBrowser()
     {
         System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
         driver = new ChromeDriver();
-        driver.get(url);
+       // driver.get(url);
         driver.manage().window().maximize();
     }
 
