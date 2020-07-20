@@ -4,11 +4,6 @@ import java.util.List;
 public class InitialPage {
     InicialMap inicialMap = new InicialMap();
 
-//    String stTituloLivro = "//h2/a";
-//    String stLivros = "ul.products-grid > li";
-//    String stPrecoLista = "span.price";
-//    String stTituloLivroLista = "h2 > a";
-
     public void setPesquisa(CharSequence... valor) {
         inicialMap.pesquisa.sendKeys(valor);
     }

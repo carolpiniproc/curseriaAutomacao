@@ -1,11 +1,12 @@
+import Settings.Driver;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.Keys;
+import static org.hamcrest.CoreMatchers.*;
+//import static org.hamcrest.MatcherAssert.*;
+import static org.junit.Assert.assertThat;
+import static org.junit.matchers.JUnitMatchers.containsString;
 
-import static com.sun.org.apache.xerces.internal.util.PropertyState.is;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.*;
-import static org.hamcrest.Matchers.containsString;
 
 public class searchLivrosTest extends BaseTest{
     InitialPage initialPage = new InitialPage();

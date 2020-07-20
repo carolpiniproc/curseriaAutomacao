@@ -1,3 +1,4 @@
+import Settings.Driver;
 import org.openqa.selenium.By;
 
 public class InvestmntosPage {
