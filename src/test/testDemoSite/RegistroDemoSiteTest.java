@@ -27,10 +27,10 @@ public class RegistroDemoSiteTest extends BaseTest{
         Assert.assertTrue(registroPage.checkNewRegister());
     }
 
-    @Test
-    public void testRefresh() throws InterruptedException {
-        testRegistrar();
-        registroPage.refresh();
-    }
+//    @Test
+//    public void testRefresh() throws InterruptedException {
+//        testRegistrar();
+//        registroPage.refresh();
+//    }
 
 }
