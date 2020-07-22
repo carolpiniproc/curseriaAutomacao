@@ -3,10 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.Keys;
 import static org.hamcrest.CoreMatchers.*;
-//import static org.hamcrest.MatcherAssert.*;
-import static org.junit.Assert.assertThat;
-import static org.junit.matchers.JUnitMatchers.containsString;
-
+import static org.hamcrest.MatcherAssert.*;
 
 public class searchLivrosTest extends BaseTest{
     InitialPage initialPage = new InitialPage();
