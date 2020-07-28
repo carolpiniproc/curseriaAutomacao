@@ -28,6 +28,9 @@ public class RegistroMap {
     public Element confirmPassword = new Element(ByValue.ID,"secondpassword");
     public Element submit = new Element(ByValue.ID,"submitbtn");
     public Element refresh = new Element(ByValue.ID,"Button1");
+    public Element emailAlreadyExists = new Element(ByValue.CSS,"div[ng-if=\"EmailExists\"]");
+    public Element phoneAlreadyExists = new Element(ByValue.CSS,"div[ng-if=\"errorlabel\"]");
     public Element uploadArquivo = new Element(ByValue.ID,"imagesrc");
-    public Element registroConcluido = new Element(ByValue.XPATH,"/html/body/section/div[1]/div/div[2]/h4[1]");
+    public Element registroConcluido = new Element(ByValue.XPATH,"//h4[1]");
+    public Element emailAlert = new Element(ByValue.CSS,".tooltptext > span");
 }

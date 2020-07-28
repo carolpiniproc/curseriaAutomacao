@@ -12,6 +12,7 @@ public class RegistroPage {
     public void setLastName(CharSequence... valor){
         registroMap.lastName.sendKeys(valor);
     }
+
     public void setAddress(CharSequence... valor){
         registroMap.address.sendKeys(valor);
     }
@@ -87,11 +88,23 @@ public class RegistroPage {
     }
 
     public boolean checkNewRegister( ){
-        return registroMap.registroConcluido.isVisible();
+        return registroMap.registroConcluido.isDisplayed();
     }
 
     public void refresh(){
-        registroMap.refresh.click();
+        if (registroMap.emailAlreadyExists.isDisplayed() == true || registroMap.phoneAlreadyExists.isDisplayed()==true) {
+            registroMap.refresh.click();
+        }
+        if (registroMap.emailAlreadyExists.isDisplayed() == true && registroMap.phoneAlreadyExists.isDisplayed()==true) {
+            registroMap.refresh.click();
+        }
+        if (registroMap.emailAlreadyExists.isDisplayed() == false && registroMap.phoneAlreadyExists.isDisplayed()==false) {
+            checkNewRegister();
+        }
+    }
+
+    public boolean checkEmailFormat(){
+        return registroMap.emailAlert.isDisplayed();
     }
 
 }
