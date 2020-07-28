@@ -8,14 +8,12 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/features",
-        tags = "",
+        tags = "@validaLivroMenina1",
         glue = "steps",
         plugin = {"json:target/reports/CucumberReports.json", "pretty"},
         snippets = SnippetType.CAMELCASE
 
 )
 public class RunnerTest {
-
-
 
 }

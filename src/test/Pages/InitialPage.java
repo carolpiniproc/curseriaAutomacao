@@ -33,4 +33,8 @@ public class InitialPage {
         return null;
     }
 
+    public void clickTitulo(){
+        inicialMap.tituloLivro.click();
+    }
+
 }
