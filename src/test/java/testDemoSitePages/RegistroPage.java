@@ -95,12 +95,11 @@ public class RegistroPage {
         if (registroMap.emailAlreadyExists.isDisplayed() == true || registroMap.phoneAlreadyExists.isDisplayed()==true) {
             registroMap.refresh.click();
         }
-        if (registroMap.emailAlreadyExists.isDisplayed() == true && registroMap.phoneAlreadyExists.isDisplayed()==true) {
+        else if (registroMap.emailAlreadyExists.isDisplayed() == true && registroMap.phoneAlreadyExists.isDisplayed()==true) {
             registroMap.refresh.click();
         }
-        if (registroMap.emailAlreadyExists.isDisplayed() == false && registroMap.phoneAlreadyExists.isDisplayed()==false) {
+        else //(registroMap.emailAlreadyExists.isDisplayed() == false && registroMap.phoneAlreadyExists.isDisplayed()==false) {
             checkNewRegister();
-        }
     }
 
     public boolean checkEmailFormat(){

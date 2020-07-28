@@ -57,7 +57,7 @@ public class RegistroDemoSiteTest extends BaseTest{
     }
 
     @Test
-    public void testEmailAlert() throws InterruptedException {
+    public void testEmailAlert() {
         Driver.setUrl("http://demo.automationtesting.in/Register.html");
         registroPage.setName("Carol");
         registroPage.setLastName("Proc");
