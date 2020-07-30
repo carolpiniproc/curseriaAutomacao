@@ -1,6 +1,9 @@
+package testDemoSitePages;
 import mappersDemoSite.RegistroMap;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import javax.lang.model.element.Element;
+import java.util.HashMap;
 import java.util.List;
 
 public class RegistroPage {
@@ -34,6 +37,7 @@ public class RegistroPage {
     }
 
     public void setHobbiesCheckbox(String valor){
+       // HashMap<String, Element> hmHobbies = new HashMap<>();
         switch (valor){
             case "Cricket":
                 registroMap.cricket.click();
@@ -92,18 +96,13 @@ public class RegistroPage {
     }
 
     public void refresh(){
-        if (registroMap.emailAlreadyExists.isDisplayed() == true || registroMap.phoneAlreadyExists.isDisplayed()==true) {
+        if (registroMap.emailAlreadyExists.isDisplayed() || registroMap.phoneAlreadyExists.isDisplayed()) {
             registroMap.refresh.click();
         }
-        else if (registroMap.emailAlreadyExists.isDisplayed() == true && registroMap.phoneAlreadyExists.isDisplayed()==true) {
-            registroMap.refresh.click();
-        }
-        else //(registroMap.emailAlreadyExists.isDisplayed() == false && registroMap.phoneAlreadyExists.isDisplayed()==false) {
-            checkNewRegister();
     }
 
-    public boolean checkEmailFormat(){
-        return registroMap.emailAlert.isDisplayed();
-    }
+//    public boolean checkEmailFormat(){
+//        return registroMap.emailAlert.isDisplayed();
+//    }
 
 }

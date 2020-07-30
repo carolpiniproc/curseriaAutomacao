@@ -2,11 +2,14 @@ import Settings.Driver;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.Keys;
+import settings.BaseTest;
+
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
 
-public class searchLivrosTest extends BaseTest{
-    InitialPage initialPage = new InitialPage();
+public class searchLivrosTest extends BaseTest {
+    pages.InitialPage initialPage = new pages.InitialPage();
 
     @Test
     public void testAsserThat()  {

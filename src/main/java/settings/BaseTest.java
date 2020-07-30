@@ -1,3 +1,5 @@
+package settings;
+
 import Settings.Driver;
 import org.junit.After;
 import org.junit.Before;

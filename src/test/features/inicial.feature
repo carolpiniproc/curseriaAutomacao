@@ -17,11 +17,11 @@
       Given que estou na tela inicial
       When eu procuro pelo livro "menina"
       Then valido o título "[PRODUTO DE EXEMPLO] - A Menina que Roubava Livros"
-      And o preco "R$519,90"
+      And o preco "R$821,30"
       When clico no livro pesquisado
       Then valido que estou na single page do livro "[PRODUTO DE EXEMPLO] - A Menina que Roubava Livros" com o preco "R$821,30"
 
-    @validaLivroMenina2
+    @validaLivros
     Scenario Outline: Validar livros
       Given que estou na tela inicial
       When eu procuro pelo livro <titulo>
@@ -30,14 +30,6 @@
       When clico no livro pesquisado
       Then valido que estou na single page do livro <titulo1> com o preco <preco>
       Examples:
-        | titulo   | tituloLivro                                              | preco      |
-        | "menina" | "[PRODUTO DE EXEMPLO] - A Menina que Roubava Livros" | "R$821,30" |
-        | "Fortaleza Digital" | "[PRODUTO DE EXEMPLO] - Fortaleza Digital" | "R$519,90" |
-#  @tag2
-#  Scenario Outline:
-#    Given
-#    When
-#    Then
-#
-#    Examples:
-#      |  |
+        | titulo   | tituloLivro                                            | preco      |
+        | "menina" | "[PRODUTO DE EXEMPLO] - A Menina que Roubava Livros"   | "R$821,30" |
+        | "Fortaleza Digital" | "[PRODUTO DE EXEMPLO] - Fortaleza Digital"  | "R$519,90" |

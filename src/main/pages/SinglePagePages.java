@@ -1,5 +1,6 @@
+package pages;
 public class SinglePagePages {
-    SinglePageMaps singlePageMap = new SinglePageMaps();
+    mappers.SinglePageMaps singlePageMap = new mappers.SinglePageMaps();
 
     public String getTitulo() {
         return singlePageMap.titulo.getText();

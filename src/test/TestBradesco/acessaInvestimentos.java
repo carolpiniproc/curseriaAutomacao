@@ -1,6 +1,7 @@
 import Settings.Driver;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import settings.BaseTest;
 
 public class acessaInvestimentos extends BaseTest {
 

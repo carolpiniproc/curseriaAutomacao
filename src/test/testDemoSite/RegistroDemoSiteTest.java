@@ -1,8 +1,11 @@
 import Settings.Driver;
 import org.junit.Assert;
 import org.junit.Test;
+import settings.BaseTest;
+import testDemoSitePages.RegistroPage;
 
-public class RegistroDemoSiteTest extends BaseTest{
+
+public class RegistroDemoSiteTest extends BaseTest {
     RegistroPage registroPage = new RegistroPage();
 
     @Test
@@ -56,13 +59,13 @@ public class RegistroDemoSiteTest extends BaseTest{
         registroPage.refresh();
     }
 
-    @Test
-    public void testEmailAlert() {
-        Driver.setUrl("http://demo.automationtesting.in/Register.html");
-        registroPage.setName("Carol");
-        registroPage.setLastName("Proc");
-        registroPage.setAddress("Rua Hermantino Coelho 743");
-        registroPage.setEmail("test@test");
-        Assert.assertTrue(registroPage.checkEmailFormat());
-    }
+//    @Test
+//    public void testEmailAlert() {
+//        Driver.setUrl("http://demo.automationtesting.in/Register.html");
+//        registroPage.setName("Carol");
+//        registroPage.setLastName("Proc");
+//        registroPage.setAddress("Rua Hermantino Coelho 743");
+//        registroPage.setEmail("test@test");
+//        Assert.assertTrue(registroPage.checkEmailFormat());
+//    }
 }

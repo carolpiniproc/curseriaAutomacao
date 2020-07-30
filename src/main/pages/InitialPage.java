@@ -1,8 +1,9 @@
+package pages;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class InitialPage {
-    InicialMap inicialMap = new InicialMap();
+    mappers.InicialMap inicialMap = new mappers.InicialMap();
 
     public void setPesquisa(CharSequence... valor) {
         inicialMap.pesquisa.sendKeys(valor);
