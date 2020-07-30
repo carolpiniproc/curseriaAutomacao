@@ -3,11 +3,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
-
 import static org.junit.Assert.assertEquals;
 
 public class InitialSteps {
     InitialPage initialPage = new InitialPage();
+
     @Given("que estou na tela inicial")
     public void queEstouNaTelaInicial() {
         Driver.setUrl("http://www.lojaexemplodelivros.com.br");

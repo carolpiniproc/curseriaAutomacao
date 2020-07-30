@@ -1,4 +1,3 @@
-import mappersDemoSite.RegistroMap;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import java.util.List;
@@ -95,11 +94,6 @@ public class RegistroPage {
         if (registroMap.emailAlreadyExists.isDisplayed() == true || registroMap.phoneAlreadyExists.isDisplayed()==true) {
             registroMap.refresh.click();
         }
-        else if (registroMap.emailAlreadyExists.isDisplayed() == true && registroMap.phoneAlreadyExists.isDisplayed()==true) {
-            registroMap.refresh.click();
-        }
-        else //(registroMap.emailAlreadyExists.isDisplayed() == false && registroMap.phoneAlreadyExists.isDisplayed()==false) {
-            checkNewRegister();
     }
 
     public boolean checkEmailFormat(){

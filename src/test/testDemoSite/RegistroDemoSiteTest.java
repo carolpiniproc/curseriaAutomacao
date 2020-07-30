@@ -56,13 +56,13 @@ public class RegistroDemoSiteTest extends BaseTest{
         registroPage.refresh();
     }
 
-    @Test
-    public void testEmailAlert() {
-        Driver.setUrl("http://demo.automationtesting.in/Register.html");
-        registroPage.setName("Carol");
-        registroPage.setLastName("Proc");
-        registroPage.setAddress("Rua Hermantino Coelho 743");
-        registroPage.setEmail("test@test");
-        Assert.assertTrue(registroPage.checkEmailFormat());
-    }
+//    @Test
+//    public void testEmailAlert() {
+//        Driver.setUrl("http://demo.automationtesting.in/Register.html");
+//        registroPage.setName("Carol");
+//        registroPage.setLastName("Proc");
+//        registroPage.setAddress("Rua Hermantino Coelho 743");
+//        registroPage.setEmail("test@test");
+//        Assert.assertTrue(registroPage.checkEmailFormat());
+//    }
 }

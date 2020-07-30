@@ -1,5 +1,3 @@
-package mappersDemoSite;
-
 import Settings.ByValue;
 import Settings.Element;
 
