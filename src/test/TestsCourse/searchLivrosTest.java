@@ -5,8 +5,8 @@ import org.openqa.selenium.Keys;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
 
-public class searchLivrosTest extends BaseTest{
-    InitialPage initialPage = new InitialPage();
+public class searchLivrosTest {
+    pages.InitialPage initialPage = new pages.InitialPage();
 
     @Test
     public void testAsserThat()  {

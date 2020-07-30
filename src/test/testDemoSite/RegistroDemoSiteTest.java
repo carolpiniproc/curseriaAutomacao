@@ -1,8 +1,9 @@
 import Settings.Driver;
 import org.junit.Assert;
 import org.junit.Test;
+import pages.RegistroPage;
 
-public class RegistroDemoSiteTest extends BaseTest{
+public class RegistroDemoSiteTest extends BaseTest {
     RegistroPage registroPage = new RegistroPage();
 
     @Test

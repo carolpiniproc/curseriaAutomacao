@@ -1,3 +1,7 @@
+package pages;
+
+import mappers.SinglePageMaps;
+
 public class SinglePagePages {
     SinglePageMaps singlePageMap = new SinglePageMaps();
 

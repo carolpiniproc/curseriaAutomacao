@@ -33,11 +33,4 @@
 #        | titulo   | tituloLivro                                              | preco      |
 #        | "menina" | "[PRODUTO DE EXEMPLO] - A Menina que Roubava Livros" | "R$821,30" |
 #        | "Fortaleza Digital" | "[PRODUTO DE EXEMPLO] - Fortaleza Digital" | "R$519,90" |
-##  @tag2
-#  Scenario Outline:
-#    Given
-#    When
-#    Then
-#
-#    Examples:
-#      |  |
+

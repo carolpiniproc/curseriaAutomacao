@@ -1,9 +1,11 @@
+package pages;
+import mappers.RegistroMap;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class RegistroPage {
-    RegistroMap registroMap = new RegistroMap();
+    mappers.RegistroMap registroMap = new RegistroMap();
 
     public void setName(CharSequence... valor){
         registroMap.name.sendKeys(valor);

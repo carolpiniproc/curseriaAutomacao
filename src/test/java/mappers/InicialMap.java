@@ -1,3 +1,4 @@
+package mappers;
 import Settings.ByValue;
 import Settings.Element;
 

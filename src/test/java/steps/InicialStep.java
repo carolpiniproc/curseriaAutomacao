@@ -1,3 +1,4 @@
+package steps;
 import Settings.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -5,8 +6,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import static org.junit.Assert.assertEquals;
 
-public class InitialSteps {
-    InitialPage initialPage = new InitialPage();
+public class InicialStep {
+    pages.InitialPage initialPage = new pages.InitialPage();
 
     @Given("que estou na tela inicial")
     public void queEstouNaTelaInicial() {
@@ -28,5 +29,4 @@ public class InitialSteps {
     public void clicoNoLivroPesquisado() {
         initialPage.clickTitulo();
     }
-
 }
