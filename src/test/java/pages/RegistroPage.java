@@ -91,13 +91,16 @@ public class RegistroPage {
     }
 
     public void refresh(){
-        if (registroMap.emailAlreadyExists.isDisplayed() == true || registroMap.phoneAlreadyExists.isDisplayed()==true) {
+        if (registroMap.emailAlreadyExists.isDisplayed() || registroMap.phoneAlreadyExists.isDisplayed()) {
             registroMap.refresh.click();
+        }
+        else {
+            checkNewRegister();
         }
     }
 
-    public boolean checkEmailFormat(){
-        return registroMap.emailAlert.isDisplayed();
-    }
+//    public boolean checkEmailFormat(){
+//        return registroMap.emailAlert.isDisplayed();
+//    }
 
 }

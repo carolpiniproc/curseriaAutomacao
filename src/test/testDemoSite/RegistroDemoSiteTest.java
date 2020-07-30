@@ -50,8 +50,6 @@ public class RegistroDemoSiteTest extends BaseTest{
 
     @Test
     public void testRefresh() throws InterruptedException {
-        testRegistrar();
-        registroPage.refresh();
         testSubmitRegistrar();
         registroPage.refresh();
     }
