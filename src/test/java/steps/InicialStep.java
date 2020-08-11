@@ -17,10 +17,12 @@ public class InicialStep {
     public void euProcuroPeloLivro(String titulo) {
         initialPage.setPesquisa(titulo, Keys.ENTER);
     }
+
     @Then("valido o título {string}")
     public void validoOTítulo(String titulo) {
         assertEquals(titulo,initialPage.getTituloLivro());
     }
+
     @Then("o preco {string}")
     public void oPreco(String preco) {
         assertEquals(preco, initialPage.getPreco());
@@ -29,4 +31,5 @@ public class InicialStep {
     public void clicoNoLivroPesquisado() {
         initialPage.clickTitulo();
     }
+
 }
